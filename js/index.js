@@ -1,5 +1,5 @@
-// MOUSEOVER
-const test = document.querySelector("nav");
+// mouseover
+const test = document.querySelector('nav');
   // This handler will be executed every time the cursor
 // is moved over a different list item
 test.addEventListener("mouseover", function( event ) {   
@@ -20,7 +20,7 @@ test.addEventListener("mouseover", function( event ) {
 //     // do something
 //   });
 
-// WHEEL
+// wheel
 function zoom(event) {
     event.preventDefault();
   
@@ -34,12 +34,37 @@ function zoom(event) {
   }
   
   let scale = 1;
-  const el = document.querySelector('img');
+  const el = document.querySelector('.content-destination img');
   el.onwheel = zoom;
   
-//   LOAD
+//   load
 window.addEventListener('load', (event) => {
     alert('This is an alter from the window');
   });
 
-// FOCUS
+// focus
+
+// resize
+const changeBannerImg = document.querySelector('img');
+changeBannerImg.addEventListener("resize", function (event) {
+  changeBannerImg.src ="img/adventure.jpg";
+});
+// scroll
+
+// select
+// function logSelection(event) {
+//     const log = document.getElementsByClassName('container home');
+//     const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+//     log.textContent = `You selected: ${selection}`;
+// }
+//   const input = document.querySelector('input');
+//   input.addEventListener('select', logSelection);
+ 
+
+// dbllick
+const doubleClick = document.querySelector('footer');
+console.log(doubleClick)
+doubleClick.addEventListener('dblclick', function (event) {
+  doubleClick.style.background = 'red';
+});
+// drag / drop
