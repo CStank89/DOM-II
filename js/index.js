@@ -11,15 +11,6 @@ test.addEventListener("mouseover", function( event ) {
   }, false);
 
 
-
-//   KEYDOWN
-//   eventTarget.addEventListener("keydown", event => {
-//     if (event.isComposing || event.keyCode === 229) {
-//       return;
-//     }
-//     // do something
-//   });
-
 // wheel
 function zoom(event) {
     event.preventDefault();
@@ -42,23 +33,13 @@ window.addEventListener('load', (event) => {
     alert('This is an alter from the window');
   });
 
-// focus
 
 // resize
 const changeBannerImg = document.querySelector('img');
-changeBannerImg.addEventListener("resize", function (event) {
+window.addEventListener("resize", function (event) {
   changeBannerImg.src ="img/adventure.jpg";
 });
-// scroll
 
-// select
-// function logSelection(event) {
-//     const log = document.getElementsByClassName('container home');
-//     const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-//     log.textContent = `You selected: ${selection}`;
-// }
-//   const input = document.querySelector('input');
-//   input.addEventListener('select', logSelection);
  
 
 // dbllick
@@ -67,4 +48,39 @@ console.log(doubleClick)
 doubleClick.addEventListener('dblclick', function (event) {
   doubleClick.style.background = 'red';
 });
-// drag / drop
+
+
+
+// KeyLog
+const log = document.getElementById('log');
+
+document.addEventListener('keypress', logKey);
+
+function logKey(event) {
+  log.textContent += `${event.code}`;
+
+  console.log(event.code)
+}
+
+
+// mouseout
+let mouseout = document.getElementById('bus');
+// added id to logo and targetted logo
+mouseout.addEventListener("mouseleave", function( event ) {   
+  // highlight the mouseleave target
+  event.target.style.color = "purple";
+
+  // reset the color after a short delay
+  setTimeout(function() {
+    event.target.style.color = "";
+  }, 1000);
+}, false);
+
+
+// copy
+const source = document.querySelector('h2');
+
+source.addEventListener('copy', (event) => {
+  alert('this text has been copied')
+});
+
