@@ -30,7 +30,7 @@ function zoom(event) {
   
 //   load
 window.addEventListener('load', (event) => {
-    alert('This is an alter from the window');
+    alert('This is a loaded alert from the window');
   });
 
 
@@ -83,4 +83,34 @@ const source = document.querySelector('h2');
 source.addEventListener('copy', (event) => {
   alert('this text has been copied')
 });
+
+// mouse down, mouse up
+function mouseDown() {
+  document.getElementById('mouse').style.color = "red";
+}
+
+function mouseUp() {
+  document.getElementById('mouse').style.color = "green";
+}
+const mouse = document.querySelector('#mouse')
+console.log(mouse)
+mouse.addEventListener('mousedown', mouseDown)
+mouse.addEventListener('mouseup', mouseUp)
+
+// dragable
+const draggable = document.querySelector('#draggable')
+draggable.draggable = true 
+draggable.addEventListener("drag", function(event) {
+  draggable.style.display = 'none'
+}, false);
+
+
+const links = document.querySelectorAll('.nav-link')
+links.forEach(function ( navLinks ){
+  navLinks.addEventListener('click', event =>{
+    event.preventDefault();
+    event.stopPropagation();
+  })
+
+})
 
